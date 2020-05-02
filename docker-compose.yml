@@ -1,0 +1,13 @@
+version: '3.7'
+volumes:
+  cassandra_data: {}
+
+services:
+  eventstore:
+    image: bitnami/cassandra:latest
+    volumes:
+      - cassandra_data:/data/db
+    ports:
+      - 7000:7000
+      - 7199:7199
+      - 9042:9042
