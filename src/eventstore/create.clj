@@ -22,9 +22,11 @@
                         uuid uuid,
                         PRIMARY KEY (uuid));"))
 
+(defn run
+  [session]
+  (create-table session))
+
 (defn -main
   "Setup the eventstore"
   []
-  (let [session (sessions/create-session)] 
-    (create-and-use-keyspace session)
-    (create-table session)))
+  (sessions/with-session run))

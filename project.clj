@@ -6,6 +6,9 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [cc.qbits/alia-all "4.3.3"]
                  [cc.qbits/hayt "4.1.0"]
+                 [io.pedestal/pedestal.service "0.5.7"]
+                 [io.pedestal/pedestal.route   "0.5.7"]
+                 [io.pedestal/pedestal.jetty   "0.5.7"]
                  [com.taoensso/nippy "2.14.0"]]
   :main ^:skip-aot organizations.core
   :aliases {"eventstore.create", ["run" "-m" "eventstore.create"]

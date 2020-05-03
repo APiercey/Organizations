@@ -15,8 +15,9 @@
 (defn -main
   "Seeds the event store"
   []
-  (let [session (sessions/create-session)]
+  (let [session (sessions/open-session)]
     (alia/execute session "USE organizations;")
-    (seed-store session)))
+    (seed-store session)
+    (sessions/close-session session)))
 
 

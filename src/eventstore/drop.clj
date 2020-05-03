@@ -11,5 +11,6 @@
 (defn -main
   "Drop the eventstore"
   []
-  (let [session (sessions/create-session)] 
-    (drop-keyspace session)))
+  (let [session (sessions/open-session)] 
+    (drop-keyspace session)
+    (sessions/close-session session)))
